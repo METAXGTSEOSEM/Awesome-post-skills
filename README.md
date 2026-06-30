@@ -177,6 +177,7 @@ The agent will walk you through the 12-step pipeline — collecting prerequisite
 | `b2b-seo-content-writer` | ✅ Stable | Content Production | Article, Schema JSON, Keyword CSV, Link Plan |
 | `wp-seo-auditor` | ✅ Stable | SEO Audit | Scored report, 8-dimension breakdown, priority fix list |
 | `competitor-content-gap-analyzer` | ✅ Stable | Competitive Intel | Gap scorecard, content calendar, coverage map |
+| `b2b-product-page-writer` | ✅ Stable | Product Pages | SEO title, description, features, scenarios, MD spec table, FAQ, schema |
 | *More coming soon* | 🔜 Planned | — | — |
 
 ---

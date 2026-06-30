@@ -1,0 +1,8 @@
+interface:
+  display_name: "B2B Product Page Writer"
+  short_description: "Generate B2B product pages optimized for Google & RankMath"
+  default_prompt: "Use $b2b-product-page-writer to create a B2B product page with SEO-optimized title, description, features, scenarios, spec table, FAQ, and schema."
+  brand_color: "#F59E0B"
+
+policy:
+  allow_implicit_invocation: false
