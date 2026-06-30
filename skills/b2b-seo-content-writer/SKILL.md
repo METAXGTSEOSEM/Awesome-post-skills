@@ -174,7 +174,12 @@ Keyword density: primary keyword 0.5-1.5%, no stuffing.
 
 Produce the final article with these requirements:
 
-- **Length**: ≥ 2500 words
+- **Length by Funnel Stage**:
+  | Funnel | Cluster Types | Minimum Words |
+  |---|---|---|
+  | TOFU (Top of Funnel) | Educational, Specifications | 1,500 |
+  | MOFU (Middle of Funnel) | Buying Guide, Comparison, Process/Quality, Certification | 2,500 |
+  | BOFU (Bottom of Funnel) | Application Scenarios, Procurement/Supplier | 3,000 |
 - **GEO summaries**: Include ≥ 3 of the following:
   - TL;DR (50-80 word executive summary at top)
   - Key Takeaways (3-5 bullet points)
