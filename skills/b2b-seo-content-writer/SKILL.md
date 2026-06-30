@@ -26,23 +26,34 @@ Every article must serve two masters equally: search engines and human readers.
 - **Image file names and Alt text**: English only.
 - **Schema markup**: English only.
 
-### 3. No Marketing Fluff — Physical Benefits Only
+### 3. No AI-Sounding Content, No Exaggerated Claims
 
-The following empty modifiers are BANNED and must never appear in any generated content:
+The article must read like it was written by a factory engineer — not a marketing AI.
 
-| Banned (Chinese) | Banned (English) | Replace With (Physical Benefit) |
+**AI Patterns to Eliminate:**
+
+| AI Pattern | Example | Why It's Bad |
 |---|---|---|
-| 性价比高 | cost-effective / high cost performance | "uses Q345B steel with 20% higher yield strength — fewer frame replacements over 10 years" |
-| 省时省力 | save time and effort / time-saving | "reduces pallet transfer cycle from 90 seconds to 45 seconds" |
-| 高投资回报 | high ROI / excellent ROI | "payback period under 18 months based on 30% labor reduction" |
-| 品质卓越 | superior quality / premium quality | "every weld UT-tested, every unit 125% overload proof-tested before shipment" |
-| 性能优异 | excellent performance / outstanding performance | "maintains rated speed at full load after 30,000 cycles" |
-| 价格合理 | reasonable price / competitive price | "itemized quotation — steel structure, hydraulics, controls priced separately" |
-| 耐用可靠 | durable and reliable | "design life target 15 years at 30 cycles/day" |
-| 操作简单 | easy to operate / user-friendly | "single-button raise/lower with emergency stop accessible from ground level" |
-| 省心省力 | worry-free | "annual maintenance: 1 oil change, 1 seal inspection — under 2 hours total" |
+| Overly polished transitions | "Furthermore, it is worth noting that..." | Reads like GPT, not a human |
+| Vague superlatives | "industry-leading", "state-of-the-art", "world-class", "unparalleled" | Empty words that fit any product |
+| Fake urgency / hype | "Don't miss out!", "Game-changing!", "Revolutionary!" | Damages credibility with B2B buyers |
+| Generic closing paragraphs | "In conclusion, choosing the right X is essential for your business success." | Says nothing, wastes reader's time |
+| Over-explaining the obvious | "A warehouse is a place where goods are stored..." | Insults the reader's intelligence |
+| Symmetrical, balanced sentence structures throughout | Every paragraph has exactly 2-3 sentences of similar length | Classic GPT fingerprint |
+| Repeated sentence starters | Consecutive sentences starting with "This", "It", "The" | Monotonous and detectable |
 
-**Rule**: If a claim can be said about any product in the category, it''s banned. Only specific, measurable, physical benefits tied to Gradin''s actual engineering choices are allowed.
+**Exaggerated Claims to Avoid:**
+
+| Don't Say | Problem |
+|---|---|
+| "the best scissor lift on the market" | Cannot be verified, damages trust |
+| "guaranteed to increase efficiency by 50%" | Fake precision, no source |
+| "trusted by thousands of customers worldwide" | Vague number, sounds made up |
+| "never requires maintenance" | Physically impossible, dishonest |
+| "solves all your material handling problems" | Over-promising, loses credibility |
+
+**The Rule**: Write like an engineer explaining their work to a peer. Be specific. Be honest. If a statement can''t be backed by a measurement, a test report, or a customer reference, don''t write it. Under-promise, over-deliver.
+
 
 ### 4. International Website Standards
 
