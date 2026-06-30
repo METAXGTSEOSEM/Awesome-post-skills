@@ -7,6 +7,53 @@ description: End-to-end B2B SEO article production following a 12-step SOP. Cove
 
 12-step SOP for producing high-conversion B2B SEO articles with EEAT, GEO, and Schema compliance.
 
+## Core Writing Principles
+
+### 1. SEO-Optimized, User-First Content
+
+Every article must serve two masters equally: search engines and human readers.
+
+- **Search Intent First**: Before writing, identify what the searcher actually wants when they type the keyword. A "how to choose" query wants decision criteria, not a product pitch. A "what is" query wants definitions and basics, not a buying guide.
+- **Topic Coverage**: Address the questions users naturally have after searching this keyword. Cover related subtopics that Google's "People Also Ask" and related searches surface.
+- **Information Density**: Every paragraph delivers actionable information. If a paragraph can be deleted without losing value, delete it.
+- **Rich Yet Readable**: Use bullet lists, comparison tables, and structured headings to make complex B2B information scannable. Short paragraphs. Clear hierarchy.
+- **Google Best Practices**: Primary keyword in title, H1, first 100 words, one H2, meta description, and URL slug. Secondary keywords distributed naturally. No stuffing.
+
+### 2. Bilingual Output Rule
+
+- **All interactions with the user**: Use Chinese for questions, explanations, confirmations, and status updates.
+- **All generated content (deliverables)**: Produce English first, then immediately follow with the Chinese translation. One block at a time: English block → Chinese block → next English block → next Chinese block.
+- **Image file names and Alt text**: English only.
+- **Schema markup**: English only.
+
+### 3. No Marketing Fluff — Physical Benefits Only
+
+The following empty modifiers are BANNED and must never appear in any generated content:
+
+| Banned (Chinese) | Banned (English) | Replace With (Physical Benefit) |
+|---|---|---|
+| 性价比高 | cost-effective / high cost performance | "uses Q345B steel with 20% higher yield strength — fewer frame replacements over 10 years" |
+| 省时省力 | save time and effort / time-saving | "reduces pallet transfer cycle from 90 seconds to 45 seconds" |
+| 高投资回报 | high ROI / excellent ROI | "payback period under 18 months based on 30% labor reduction" |
+| 品质卓越 | superior quality / premium quality | "every weld UT-tested, every unit 125% overload proof-tested before shipment" |
+| 性能优异 | excellent performance / outstanding performance | "maintains rated speed at full load after 30,000 cycles" |
+| 价格合理 | reasonable price / competitive price | "itemized quotation — steel structure, hydraulics, controls priced separately" |
+| 耐用可靠 | durable and reliable | "design life target 15 years at 30 cycles/day" |
+| 操作简单 | easy to operate / user-friendly | "single-button raise/lower with emergency stop accessible from ground level" |
+| 省心省力 | worry-free | "annual maintenance: 1 oil change, 1 seal inspection — under 2 hours total" |
+
+**Rule**: If a claim can be said about any product in the category, it''s banned. Only specific, measurable, physical benefits tied to Gradin''s actual engineering choices are allowed.
+
+### 4. International Website Standards
+
+This is an international-facing website. All content must follow international conventions:
+
+- ✅ **English punctuation only**: Use `.` `,` `:` `;` `?` `!` `-` `—` `'` `"` — never `，` `。` `：` `；` `"` `"` `'` `'` even in Chinese translations.
+- ✅ **Metric units with imperial in parentheses** where helpful: "5000 kg (11,023 lbs)".
+- ✅ **ISO date format**: YYYY-MM-DD.
+- ✅ **24-hour time** or "AM/PM" — never Chinese time notation.
+- ✅ **No region-specific references** unless explicitly about that region (e.g., don't say "在我们国内" — say "in the Chinese market").
+- ✅ **Currency**: Use USD/EUR or specify the currency explicitly. Don't assume RMB.
 ## Prerequisites
 
 Before starting, collect from the user:
