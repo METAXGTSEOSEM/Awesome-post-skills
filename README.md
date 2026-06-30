@@ -7,7 +7,8 @@
   <img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor" />
   <img src="https://img.shields.io/badge/Windsurf-0EA5E9?style=for-the-badge&logo=codeium&logoColor=white" alt="Windsurf" />
   <img src="https://img.shields.io/badge/Aider-FF6B35?style=for-the-badge&logo=python&logoColor=white" alt="Aider" />
-  <img src="https://img.shields.io/badge/Cline-E34F26?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Cline" />`n  <a href="https://ccswitch.io/"><img src="https://img.shields.io/badge/CC_Switch-0A0A0A?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzBGMUYyRiIvPjx0ZXh0IHg9IjEyIiB5PSIxNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzAwRkY4OCI+MkNTPC90ZXh0Pjwvc3ZnPg==&logoColor=white&labelColor=111111" alt="CC-Switch" /></a>
+  <img src="https://img.shields.io/badge/Cline-E34F26?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Cline" />
+  <a href="https://ccswitch.io/"><img src="https://img.shields.io/badge/CC_Switch-0A0A0A?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iIzBGMUYyRiIvPjx0ZXh0IHg9IjEyIiB5PSIxNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzAwRkY4OCI+MkNTPC90ZXh0Pjwvc3ZnPg==&logoColor=white&labelColor=111111" alt="CC-Switch" /></a>
 </p>
 
 <h1 align="center">🚀 Awesome Post Skills</h1>
