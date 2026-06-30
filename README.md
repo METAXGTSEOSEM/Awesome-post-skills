@@ -1,17 +1,24 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Codex-Skills-2563EB?style=for-the-badge&logo=openai&logoColor=white" alt="Codex Skills" />
+  <img src="https://img.shields.io/badge/Agent%20Skills-Collection-2563EB?style=for-the-badge&logo=robot&logoColor=white" alt="Agent Skills" />
   <img src="https://img.shields.io/badge/B2B%20SEO-Content%20Writer-059669?style=for-the-badge" alt="B2B SEO" />
   <img src="https://img.shields.io/badge/EEAT%20%2B%20GEO-Optimized-7C3AED?style=for-the-badge" alt="EEAT + GEO" />
+  <img src="https://img.shields.io/badge/Platform-Codex%20%7C%20Copilot%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider%20%7C%20Cline-black?style=for-the-badge" alt="Multi-Agent" />
 </p>
 
 <h1 align="center">🚀 Awesome Post Skills</h1>
-<p align="center"><strong>Production-grade Codex agent skills for content marketing, SEO, and beyond.</strong></p>
+<p align="center">
+  <strong>Production-grade AI agent skills for content marketing, SEO, and growth.</strong><br />
+  <sub>Works with any agent that supports markdown-based instruction files — not just Codex.</sub>
+</p>
 
 <p align="center">
+  <a href="#-what-is-this"><strong>About</strong></a> ·
   <a href="#-available-skills"><strong>Skills</strong></a> ·
+  <a href="#-platform-compatibility"><strong>Compatibility</strong></a> ·
   <a href="#-quick-start"><strong>Quick Start</strong></a> ·
   <a href="#-skill-collection"><strong>Collection</strong></a> ·
   <a href="#-roadmap"><strong>Roadmap</strong></a> ·
+  <a href="#-faq"><strong>FAQ</strong></a> ·
   <a href="#-contributing"><strong>Contributing</strong></a>
 </p>
 
@@ -19,31 +26,49 @@
 
 ## 🧠 What Is This?
 
-A curated collection of **[Codex](https://github.com/openai/codex)** agent skills — modular, self-contained instruction packs that transform the general-purpose Codex agent into a specialized content production machine.
+A curated collection of **agent skills** — modular, self-contained instruction packs that transform any capable AI coding agent into a specialized content production machine.
 
-Each skill is a folder containing a `SKILL.md` (the agent's operating manual) plus optional templates, scripts, and reference assets. Drop them into Codex and it instantly knows how to execute complex, multi-step workflows.
+Each skill is a plain Markdown folder. No SDKs. No lock-in. Just `.md` files, YAML metadata, and optional templates. Drop them into your agent of choice and it instantly knows how to execute complex, multi-step workflows.
 
-> **Think of it as:** SOP-as-Code. Your content playbooks, machine-readable.
+### 💡 The Philosophy
+
+Every great content team has SOPs — Standard Operating Procedures. Style guides. Checklists. Templates. This repo turns those playbooks into **machine-readable instructions** that AI agents can follow with surgical precision.
+
+> **SOP-as-Code.** Your content playbooks, executable.
+
+### 🤖 Supported Agents
+
+These skills follow a universal pattern — YAML frontmatter + Markdown body. They work with any agent platform that supports file-based instruction injection:
+
+| Agent | How to Use | Notes |
+|---|---|---|
+| **[Codex](https://github.com/openai/codex)** | `$skill-name` or auto-detect | Native `$skill` syntax; full `SKILL.md` + `openai.yaml` support |
+| **[GitHub Copilot](https://github.com/features/copilot)** | `.github/copilot-instructions.md` | Copy `SKILL.md` content into instructions file |
+| **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** | `CLAUDE.md` or `/instructions` | Paste into project-level or user-level CLAUDE.md |
+| **[Cursor](https://cursor.com/)** | `.cursor/rules/` or `.cursorrules` | Drop `SKILL.md` content into a rule file with glob pattern |
+| **[Windsurf](https://codeium.com/windsurf)** | `.windsurfrules` | Same approach — paste skill instructions |
+| **[Aider](https://aider.chat/)** | `--read` flag or `.aider.conf.yml` | Point to `SKILL.md` via config |
+| **[Cline](https://github.com/cline/cline)** (VS Code) | `.clinerules` | Paste skill content; supports project & user-level |
+| **[Amazon Q Developer](https://aws.amazon.com/q/developer/)** | `.amazonq/rules/` | Custom instructions via rules directory |
+| **Any MCP-compatible agent** | Load as resource | Treat `SKILL.md` as an MCP resource |
+
+> 💡 **Universal principle**: If your agent can read a Markdown file and follow instructions within it, it can use these skills. The `SKILL.md` file is the single source of truth — copy it, reference it, or symlink it.
 
 ---
 
 ## 🎯 Available Skills
 
-| # | Skill | Description | Highlights |
+| # | Skill | Category | Description |
 |---|---|---|---|
-| 1 | [`b2b-seo-content-writer`](./skills/b2b-seo-content-writer/) | End-to-end B2B SEO article production | 12-step SOP · 8 cluster types · EEAT · GEO · Schema |
+| 1 | [`b2b-seo-content-writer`](./skills/b2b-seo-content-writer/) | Content Production | 12-step B2B SEO article pipeline with EEAT, GEO & Schema |
 
 ---
 
 ### 🔍 `b2b-seo-content-writer` — Deep Dive
 
+A battle-tested 12-step production pipeline for B2B articles that rank and convert:
+
 ```text
-$b2b-seo-content-writer
-```
-
-The flagship skill. Follows a battle-tested 12-step production pipeline:
-
-```
 Step 1   Cluster Title Research
    ↓     (8 cluster types: Educational · Buying Guide · Comparison ·
    ↓      Specifications · Application Scenarios · Process/Quality ·
@@ -56,67 +81,132 @@ Step 6   Submit Outline to AI
 Step 7   Keyword Placement + EEAT Markup Instructions
 Step 8   GEO Article Generation (≥2500 words, ≥3 summary types)
 Step 9   WordPress Preview QA (9-point checklist)
-Step 10  Images + External Links + Internal Links
+Step 10  Images + External Links + Internal Links (6-image plan)
 Step 11  Schema Markup (Article / FAQPage / HowTo / ImageObject)
 Step 12  Keyword Record Archive (CSV tracking)
 ```
 
-**What you get at the end:** A publish-ready article with SEO-optimized structure, EEAT trust signals, GEO-friendly summaries, schema markup JSON, a keyword tracking record, and a full internal/external link plan.
+**What you get:** A publish-ready article with SEO structure, EEAT trust signals, GEO-friendly summaries, 4× schema JSON-LD blocks, a keyword tracking record, and a full internal/external link plan. See the [skill README](./skills/b2b-seo-content-writer/) for details.
+
+---
+
+## 📋 Platform Compatibility
+
+All skills use the standard **YAML frontmatter + Markdown body** format. Here's how to adapt for different agents:
+
+### Codex (Native)
+```bash
+# Install via skill-installer
+$skill-installer install METAXGTSEOSEM/Awesome-post-skills --skill b2b-seo-content-writer
+
+# Or invoke directly
+$b2b-seo-content-writer
+```
+
+### Claude Code / Cursor / Windsurf / Copilot
+Just copy the `SKILL.md` content. The agent reads it as custom instructions:
+```bash
+# Example: add to Claude Code
+cat skills/b2b-seo-content-writer/SKILL.md >> CLAUDE.md
+```
+
+### Aider
+```bash
+aider --read skills/b2b-seo-content-writer/SKILL.md
+```
+
+### Any Agent (Universal)
+```
+1. Open skills/b2b-seo-content-writer/SKILL.md
+2. Copy the entire file
+3. Paste into your agent's custom instructions / system prompt / rules file
+4. Done.
+```
 
 ---
 
 ## ⚡ Quick Start
 
 ### Prerequisites
-- [Codex CLI](https://github.com/openai/codex) or Codex Desktop installed
-- Codex configured with your API key
+- Any AI coding agent (Codex, Copilot, Claude Code, Cursor, Windsurf, Aider, Cline, etc.)
+- For Codex specifically: [Codex CLI](https://github.com/openai/codex) or Codex Desktop
 
-### Install a skill
+### Option A: Codex (Recommended for full experience)
 
 ```bash
-# Via the skill-installer (recommended)
+# Install via skill-installer
 $skill-installer install METAXGTSEOSEM/Awesome-post-skills --skill b2b-seo-content-writer
 
-# Or clone the repo and point Codex to it
+# Or clone the full repo
 git clone https://github.com/METAXGTSEOSEM/Awesome-post-skills.git
 ```
 
-### Use a skill
+### Option B: Any Agent (Universal)
 
-Just invoke the skill name in your Codex conversation:
+```bash
+# Clone the repo
+git clone https://github.com/METAXGTSEOSEM/Awesome-post-skills.git
+
+# Copy the skill you need into your agent's instructions
+cat Awesome-post-skills/skills/b2b-seo-content-writer/SKILL.md >> ~/your-agent-instructions.md
+```
+
+### Usage
 
 ```
 $b2b-seo-content-writer
 ```
 
-Or describe what you need naturally — Codex auto-detects matching skills:
-
 > *"Write a heavy-duty scissor lift buying guide for my B2B warehouse audience, with EEAT and schema markup."*
+
+The agent will walk you through the 12-step pipeline — collecting prerequisites, researching titles, analyzing competitors, mining keywords, generating EEAT content, and producing the final article with all metadata.
 
 ---
 
 ## 📦 Skill Collection
 
-| Skill | Status | Category | Dependencies |
+| Skill | Status | Category | Key Deliverables |
 |---|---|---|---|
-| `b2b-seo-content-writer` | ✅ Stable | Content Production | — |
+| `b2b-seo-content-writer` | ✅ Stable | Content Production | Article, Schema JSON, Keyword CSV, Link Plan |
 | *More coming soon* | 🔜 Planned | — | — |
 
 ---
 
 ## 🗺️ Roadmap
 
-Planned skills for this collection:
-
-- [ ] **`wp-seo-auditor`** — Automated WordPress SEO audit with actionable fix list
-- [ ] **`geo-content-optimizer`** — Generative Engine Optimization for AI-powered search (ChatGPT, Perplexity, Gemini)
-- [ ] **`keyword-cluster-planner`** — Build topic clusters and content calendars from SEMrush/Ahrefs data
-- [ ] **`linkedin-b2b-post-writer`** — B2B LinkedIn content with hook frameworks and engagement patterns
-- [ ] **`google-ads-copy-generator`** — RSA headlines, descriptions, and extensions with A/B variant logic
-- [ ] **`schema-markup-factory`** — Generate complete JSON-LD schema packages for any page type
-- [ ] **`product-page-rewriter`** — B2B product page copy optimization with UX writing principles
+| # | Skill | Category | Status |
+|---|---|---|---|
+| 1 | `wp-seo-auditor` | SEO Audit | 🔜 Planned |
+| 2 | `geo-content-optimizer` | GEO / AI Search | 🔜 Planned |
+| 3 | `keyword-cluster-planner` | Keyword Research | 🔜 Planned |
+| 4 | `linkedin-b2b-post-writer` | Social / B2B | 🔜 Planned |
+| 5 | `google-ads-copy-generator` | PPC / Advertising | 🔜 Planned |
+| 6 | `schema-markup-factory` | Technical SEO | 🔜 Planned |
+| 7 | `product-page-rewriter` | Conversion / CRO | 🔜 Planned |
+| 8 | `email-drip-campaign-builder` | Email Marketing | 💡 Idea |
+| 9 | `landing-page-ab-test-designer` | CRO / Testing | 💡 Idea |
+| 10 | `competitor-content-gap-analyzer` | Competitive Intel | 💡 Idea |
 
 > Have an idea? [Open an issue](https://github.com/METAXGTSEOSEM/Awesome-post-skills/issues/new) or submit a PR.
+
+---
+
+## ❓ FAQ
+
+### Do I need Codex to use these skills?
+No. The skills are plain Markdown files with YAML metadata. Any AI coding agent that supports custom instructions, rules files, or system prompt injection can use them. See the [Platform Compatibility](#-platform-compatibility) table above.
+
+### What if my agent doesn't support `$skill-name` syntax?
+Just paste the `SKILL.md` content into your agent's instructions file (`.cursorrules`, `CLAUDE.md`, `.clinerules`, etc.). The workflow instructions work the same way — the `$` syntax is just a Codex-native shortcut.
+
+### Can I mix skills?
+Yes. Each skill is self-contained and handles one domain. You can load multiple skills at once, though be mindful of context window limits. For agents with large contexts (200K+ tokens), loading 2-3 skills is perfectly fine.
+
+### How is this different from prompts or templates?
+Prompts are one-shot. Templates are fill-in-the-blank. Skills are **complete operating procedures** — they guide the agent through multi-step decision trees, enforce quality checkpoints, and produce multiple interdependent deliverables in sequence.
+
+### Can I contribute my own skill?
+Absolutely. See [Contributing](#-contributing) below. The format is deliberately simple: one folder, one `SKILL.md`, optional assets. No build step. No framework.
 
 ---
 
@@ -124,17 +214,16 @@ Planned skills for this collection:
 
 ### Skill Structure
 
-Every skill lives under `skills/<skill-name>/` and follows this layout:
-
 ```
 skills/<skill-name>/
-├── SKILL.md              # Required: YAML frontmatter + markdown instructions
+├── SKILL.md              # Required: YAML frontmatter + markdown workflow
 ├── agents/
-│   └── openai.yaml       # UI metadata (display name, color, prompt)
-└── assets/               # Optional: templates, CSVs, reference docs
-    ├── template-1.md
-    ├── template-2.md
-    └── data-template.csv
+│   └── openai.yaml       # UI metadata (Codex-specific; optional for other agents)
+├── assets/               # Templates, CSVs, reference docs (optional)
+│   ├── template-1.md
+│   └── data-template.csv
+├── scripts/              # Executable helpers (optional)
+└── references/           # Domain knowledge docs (optional)
 ```
 
 ### Adding a New Skill
@@ -144,18 +233,29 @@ skills/<skill-name>/
    ```yaml
    ---
    name: your-skill-name
-   description: What it does and when Codex should use it. Be specific.
+   description: What it does and when agents should use it. Include trigger keywords.
    ---
    ```
-3. Add `agents/openai.yaml` for UI metadata
-4. Add any template/asset files in `assets/`
-5. Validate: `python quick_validate.py skills/<your-skill>/`
-6. Open a PR 🎉
+3. Add `agents/openai.yaml` for Codex UI metadata (optional but recommended)
+4. Add templates, CSVs, or reference files in `assets/`
+5. Add a row to the [Skill Collection](#-skill-collection) table in this README
+6. Validate: `python quick_validate.py skills/<your-skill>/` (if using skill-creator tools)
+7. Open a PR 🎉
 
 ### Guidelines
-- **Concise is key** — Codex is already smart. Only add context it doesn't have.
-- **Imperative form** — Write SKILL.md in imperative/infinitive style. "Do X", not "You should do X".
-- **Test your skill** — Run through a real task end-to-end before submitting.
+- **Concise is key** — Agents are already smart. Only add context they don't already have.
+- **Imperative form** — "Do X", not "You should do X". Instructions are commands.
+- **Platform-agnostic** — Avoid agent-specific syntax in `SKILL.md`. The instructions should work when copied into any agent's custom rules.
+- **Chunk your steps** — Each step should produce a discrete deliverable. Avoid mega-steps that mix research, writing, and QA.
+- **Test before PR** — Run through a real task end-to-end with at least one agent platform.
+
+---
+
+## ⭐ Star History
+
+If this repo helps you, give it a star! It helps others discover it.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=METAXGTSEOSEM/Awesome-post-skills&type=Date)](https://star-history.com/#METAXGTSEOSEM/Awesome-post-skills&Date)
 
 ---
 
@@ -166,5 +266,5 @@ MIT © [METAXGTSEOSEM](https://github.com/METAXGTSEOSEM)
 ---
 
 <p align="center">
-  <sub>Built with ❤️ for content marketers who ship.</sub>
+  <sub>Built for anyone who writes content that ranks. AI is the assistant — you're the editor.</sub>
 </p>
