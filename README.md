@@ -1,7 +1,13 @@
 <p align="center">
 <img src="https://img.shields.io/badge/B2B%20SEO-Content%20Writer-059669?style=for-the-badge" alt="B2B SEO" />
   <img src="https://img.shields.io/badge/EEAT%20%2B%20GEO-Optimized-7C3AED?style=for-the-badge" alt="EEAT + GEO" />
-  <img src="https://img.shields.io/badge/Platform-Codex%20%7C%20Copilot%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider%20%7C%20Cline-black?style=for-the-badge" alt="Multi-Agent" />
+  <img src="https://img.shields.io/badge/Codex-6C47FF?style=for-the-badge&logo=openai&logoColor=white" alt="Codex" />
+  <img src="https://img.shields.io/badge/Copilot-000000?style=for-the-badge&logo=githubcopilot&logoColor=white" alt="Copilot" />
+  <img src="https://img.shields.io/badge/Claude_Code-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude Code" />
+  <img src="https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white" alt="Cursor" />
+  <img src="https://img.shields.io/badge/Windsurf-0EA5E9?style=for-the-badge&logo=codeium&logoColor=white" alt="Windsurf" />
+  <img src="https://img.shields.io/badge/Aider-FF6B35?style=for-the-badge&logo=python&logoColor=white" alt="Aider" />
+  <img src="https://img.shields.io/badge/Cline-E34F26?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Cline" />
 </p>
 
 <h1 align="center">🚀 Awesome Post Skills</h1>
