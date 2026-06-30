@@ -1,9 +1,7 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Agent%20Skills-Collection-2563EB?style=for-the-badge&logo=robot&logoColor=white" alt="Agent Skills" />
   <img src="https://img.shields.io/badge/B2B%20SEO-Content%20Writer-059669?style=for-the-badge" alt="B2B SEO" />
   <img src="https://img.shields.io/badge/EEAT%20%2B%20GEO-Optimized-7C3AED?style=for-the-badge" alt="EEAT + GEO" />
   <p align="center">
-  <img src="https://img.shields.io/badge/Agent%20Skills-Collection-2563EB?style=for-the-badge&logo=robot&logoColor=white" alt="Agent Skills" />
   <img src="https://img.shields.io/badge/B2B%20SEO-Content%20Writer-059669?style=for-the-badge" alt="B2B SEO" />
   <img src="https://img.shields.io/badge/EEAT%20%2B%20GEO-Optimized-7C3AED?style=for-the-badge" alt="EEAT + GEO" />
 </p>
