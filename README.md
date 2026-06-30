@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Agent%20Skills-Collection-2563EB?style=for-the-badge&logo=robot&logoColor=white" alt="Agent Skills" />
-  <img src="https://img.shields.io/badge/B2B%20SEO-Content%20Writer-059669?style=for-the-badge" alt="B2B SEO" />
+<img src="https://img.shields.io/badge/B2B%20SEO-Content%20Writer-059669?style=for-the-badge" alt="B2B SEO" />
   <img src="https://img.shields.io/badge/EEAT%20%2B%20GEO-Optimized-7C3AED?style=for-the-badge" alt="EEAT + GEO" />
   <img src="https://img.shields.io/badge/Platform-Codex%20%7C%20Copilot%20%7C%20Claude%20Code%20%7C%20Cursor%20%7C%20Windsurf%20%7C%20Aider%20%7C%20Cline-black?style=for-the-badge" alt="Multi-Agent" />
 </p>
