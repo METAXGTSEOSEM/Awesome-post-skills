@@ -128,8 +128,14 @@ Produce the final article with these requirements:
   - Each H2 section ≥ 200 words
   - No cliché openings ("In summary", "To conclude", etc.)
   - Data and facts must cite sources
+  - **No fabricated data**: Never invent statistics, client names, project metrics, or certifications. Use [placeholder] markers when real data is unavailable from the user.
   - EEAT markers inserted per Step 7 positions
   - Internal/external links inserted per Step 5 plan
+**Language Support**:
+- Generate the article in the language requested by the user (English default)
+- If user requests translation, produce a full translated version
+- Maintain all internal link targets, Alt text, and schema JSON in both languages
+- SEO keywords should be researched separately for each target language
 
 ### Step 9: WordPress Preview QA
 
@@ -237,7 +243,9 @@ Path B — Local images not available: Provide AI image generation prompts for e
 
 **Internal Links**:
 - Insert per Step 5 plan
-- Ensure minimum: 1 product page + 1 case page + 1 contact page### Step 11: Schema Markup
+- Ensure minimum: 1 product page + 1 case page + 1 contact page
+
+### Step 11: Schema Markup
 
 Add structured data. Required schemas:
 
