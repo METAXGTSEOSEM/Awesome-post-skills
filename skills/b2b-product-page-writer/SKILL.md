@@ -36,6 +36,14 @@ Only generate these 7 variable blocks:
 
 ---
 
+
+## Output Language Rule
+
+- **All interactions with the user**: Use Chinese for questions, explanations, and confirmations.
+- **All generated content (deliverables)**: Produce English first, then immediately follow with the Chinese translation. One block at a time: English block → Chinese block → next English block → next Chinese block.
+- **Image file names and Alt text**: English only (SEO convention).
+- **Schema markup**: English only (Google requirement).
+
 ## Step 1: Product Info Collection
 
 If any of these are missing, ask the user:
