@@ -145,6 +145,57 @@ Quality checklist before publishing:
 - [ ] Image Alt text filled
 - [ ] Meta Description ≤ 160 characters
 
+
+### Step 9.5: Content Quality Audit
+
+Before finalizing the article, run a quality audit across 5 dimensions:
+
+#### 1. AI-Generated Content Detection
+
+Scan for overused AI patterns and virtual/fabricated information:
+
+- **Cliché openings**: Check for "In today's fast-paced world", "In the ever-evolving landscape of", "In conclusion", "To summarize"
+- **Fluff phrases**: "It is important to note that", "It is worth mentioning that", "As previously stated"
+- **Overly generic claims**: "Industry-leading", "State-of-the-art", "World-class" (unless backed by specific evidence)
+- **Fabricated data**: Flag any statistic, percentage, or "studies show" claim that lacks a source citation
+- **Virtual/fake case studies**: Verify that named clients, project locations, and specific numbers can be traced back to real data
+
+Action: Replace flagged content. If a claim cannot be verified, either add a source or remove it.
+
+#### 2. Factual Verification
+
+- [ ] Every data point has a source (linked or cited)
+- [ ] Technical specifications match Gradin product documentation
+- [ ] Certification names and numbers are accurate (ISO, ANSI, CE)
+- [ ] Client case details are factual (dates, locations, metrics)
+
+#### 3. External Link Health Check
+
+For each external link from Step 5:
+
+- [ ] Run a GET request — confirm HTTP status is 2xx or 3xx
+- [ ] Check the linked page is relevant to the anchor text
+- [ ] Verify the link target still exists (Wikipedia pages, MHI resources, OSHA pages)
+- [ ] Flag 404 / 403 / 5xx results for replacement
+
+#### 4. Internal Link Validation
+
+For each internal link from Step 5:
+
+- [ ] URL path matches the site's actual URL structure
+- [ ] Slug format is correct (hyphen-case, no trailing slashes)
+- [ ] Anchor text is descriptive (not "click here" or "read more")
+
+#### 5. Readability Assessment
+
+- [ ] Average sentence ≤ 25 words (spot-check 5 random sentences)
+- [ ] Paragraph length ≤ 4 sentences
+- [ ] No single sentence exceeds 40 words
+- [ ] Flesch Reading Ease score ≥ 50 (target for B2B audience)
+
+Output: Pass/Fail report for each dimension with specific flagged items and suggested fixes.
+
+---
 ### Step 10: Images + External Links + Internal Links
 
 **Images**:
@@ -266,6 +317,8 @@ Step 7  Keyword Placement + EEAT Markup Instructions
 Step 8  GEO Article Generation (≥2500 words, ≥3 summary types)
    ↓
 Step 9  WordPress Preview QA
+   ↓
+Step 9.5 Content Quality Audit (AI detection + link check)
    ↓
 Step 10 Images + External Links + Internal Links
    ↓
