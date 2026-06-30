@@ -1,0 +1,8 @@
+﻿interface:
+  display_name: "B2B SEO Content Writer"
+  short_description: "12-step B2B SEO article production with EEAT, GEO & Schema"
+  default_prompt: "Use $b2b-seo-content-writer to produce a B2B SEO article following the 12-step SOP, starting with cluster type identification."
+  brand_color: "#2563EB"
+
+policy:
+  allow_implicit_invocation: false
