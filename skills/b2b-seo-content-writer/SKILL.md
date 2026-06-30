@@ -148,10 +148,36 @@ Quality checklist before publishing:
 ### Step 10: Images + External Links + Internal Links
 
 **Images**:
-- Minimum 1 image per 500 words
-- Types: product photos, process diagrams, data charts, case photos
-- All images: descriptive Alt text (include keyword when natural)
-- File naming: `keyword-description.jpg`
+
+Minimum 1 image per 500 words. For each image, output a placement table with exact paragraph insertion points.
+
+#### Image Placement Table
+
+For each image, specify:
+
+| # | File Name | Type | Insert After (Paragraph) | Alt Text |
+|---|---|---|---|---|
+| 1 | `keyword-description.jpg` | [product / process / chart / case / infographic] | [H2 section name, sub-paragraph] | [Descriptive Alt with keyword] |
+
+#### Image Types by Cluster
+
+| Cluster Type | Recommended Image Types |
+|---|---|
+| Educational / Specifications | Product photos, dimension diagrams, cutaway views |
+| Buying Guide / Comparison | Comparison infographics, feature callout diagrams |
+| Application Scenarios | Customer site photos, before/after installation |
+| Process/Quality | Factory floor photos, QC testing equipment, weld inspection |
+| Certification/Compliance | Certification badges, testing lab photos, standard logos |
+| Procurement/Supplier | Factory exterior, team photos, packaging/loading dock |
+
+**Dual-Path Image Sourcing**:
+
+Path A — Local images exist: Use real Gradin photos directly. Follow file naming convention `keyword-description.jpg`. All images get descriptive Alt text (include keyword when natural).
+
+Path B — Local images not available: Provide AI image generation prompts for each missing image. Prompt format:
+```
+[Style descriptor] image of [subject] in [context], [key visible elements], [lighting/mood], [technical specification] --ar [ratio]
+```
 
 **External Links**:
 - Insert per Step 5 plan at corresponding text positions
@@ -160,9 +186,7 @@ Quality checklist before publishing:
 
 **Internal Links**:
 - Insert per Step 5 plan
-- Ensure minimum: 1 product page + 1 case page + 1 contact page
-
-### Step 11: Schema Markup
+- Ensure minimum: 1 product page + 1 case page + 1 contact page### Step 11: Schema Markup
 
 Add structured data. Required schemas:
 
