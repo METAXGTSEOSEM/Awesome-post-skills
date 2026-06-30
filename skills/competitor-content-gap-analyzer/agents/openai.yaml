@@ -1,0 +1,8 @@
+interface:
+  display_name: "Competitor Content Gap Analyzer"
+  short_description: "Find what competitors write that you don't"
+  default_prompt: "Use $competitor-content-gap-analyzer to crawl competitors and identify content gaps for my site."
+  brand_color: "#7C3AED"
+
+policy:
+  allow_implicit_invocation: false

@@ -175,6 +175,8 @@ The agent will walk you through the 12-step pipeline — collecting prerequisite
 | Skill | Status | Category | Key Deliverables |
 |---|---|---|---|
 | `b2b-seo-content-writer` | ✅ Stable | Content Production | Article, Schema JSON, Keyword CSV, Link Plan |
+| `wp-seo-auditor` | ✅ Stable | SEO Audit | Scored report, 8-dimension breakdown, priority fix list |
+| `competitor-content-gap-analyzer` | ✅ Stable | Competitive Intel | Gap scorecard, content calendar, coverage map |
 | *More coming soon* | 🔜 Planned | — | — |
 
 ---
@@ -183,7 +185,7 @@ The agent will walk you through the 12-step pipeline — collecting prerequisite
 
 | # | Skill | Category | Status |
 |---|---|---|---|
-| 1 | `wp-seo-auditor` | SEO Audit | 🔜 Planned |
+| 1 | `wp-seo-auditor` | SEO Audit | ✅ Planned |
 | 2 | `geo-content-optimizer` | GEO / AI Search | 🔜 Planned |
 | 3 | `keyword-cluster-planner` | Keyword Research | 🔜 Planned |
 | 4 | `linkedin-b2b-post-writer` | Social / B2B | 🔜 Planned |
@@ -192,7 +194,7 @@ The agent will walk you through the 12-step pipeline — collecting prerequisite
 | 7 | `product-page-rewriter` | Conversion / CRO | 🔜 Planned |
 | 8 | `email-drip-campaign-builder` | Email Marketing | 💡 Idea |
 | 9 | `landing-page-ab-test-designer` | CRO / Testing | 💡 Idea |
-| 10 | `competitor-content-gap-analyzer` | Competitive Intel | 💡 Idea |
+| 10 | `competitor-content-gap-analyzer` | Competitive Intel | ✅ Idea |
 
 > Have an idea? [Open an issue](https://github.com/METAXGTSEOSEM/Awesome-post-skills/issues/new) or submit a PR.
 

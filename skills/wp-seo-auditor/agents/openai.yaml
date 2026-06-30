@@ -1,0 +1,8 @@
+interface:
+  display_name: "WP SEO Auditor"
+  short_description: "Score your WordPress article across 8 SEO dimensions"
+  default_prompt: "Use $wp-seo-auditor to audit a published WordPress article and get a scored report with prioritized fixes."
+  brand_color: "#DC2626"
+
+policy:
+  allow_implicit_invocation: false
