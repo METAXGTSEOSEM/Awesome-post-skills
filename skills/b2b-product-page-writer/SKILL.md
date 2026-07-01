@@ -191,19 +191,15 @@ Also generate:
 
 ### Step 6: Features
 
-Structure:
+6-10 items. Format exactly matches Application Scenarios: each item is `- **Label**: Description sentence.`
 
-1. **One-line summary** at the top -- what this product solves in plain engineering language. Not a slogan. Not a list. One sentence capturing the core value.
+No summary line. Features start directly with the first bullet. Same visual rhythm as Scenarios.
 
-2. **3 Feature items** below. Format matches Application Scenarios: `- **Label**: Description sentence.`
-
-Each Feature = one bold label + one description sentence. 3 items total.
-
-The 3 dimensions to cover (pick the 3 most relevant; do NOT use the same 3 for every product):
+Select from these dimensions (mix across a minimum of 4 different dimensions; do NOT cluster all items in one dimension):
 
 | Dimension | What It Covers | Example Labels |
 |---|---|---|
-| **Key Spec** | The number buyers check first | Load Capacity, 90-Degree Tilt, 4200mm Lift Height, 80mm/s Speed |
+| **Key Spec** | The numbers buyers check first | Load Capacity, 90-Degree Tilt, 4200mm Lift Height, 80mm/s Speed |
 | **Differentiator** | What separates this from standard alternatives | Dual-cylinder Synchronized Drive, Compact Footprint, Tool-Free Adjustment, Modular Frame |
 | **Safety/Compliance** | Certifications, safety mechanisms, standards met | CE + ISO 9001 Certified, Dual-channel Emergency Stop, Overload Protection at 125 percent |
 | **Build/Components** | Materials, branded parts, structural choices | Q345B Structural Steel Frame, Siemens Motor, SKF Bearings, All-Welded Construction |
@@ -211,17 +207,18 @@ The 3 dimensions to cover (pick the 3 most relevant; do NOT use the same 3 for e
 
 Rules:
 - Labels must be derived from `{ProductSpecs}` -- never invent Siemens, SKF, or any brand unless the user provided it.
-- If the user did not provide certifications or branded components, use the Safety/Compliance or Build dimensions with structural descriptions instead of brand names.
+- If the user did not provide certifications or branded components, use structural descriptions instead of brand names.
 - Never write "improves efficiency", "saves time", or any hollow benefit. Every explanation must trace to a physical cause.
-- Format exactly like Application Scenarios: `- **Label**: Description.` (bold label, colon, space, description sentence).
+- Spread items across at least 4 different dimensions. Do not write 6 variations of "load capacity".
 
 Example format (product: hydraulic upender):
 ```
-10-ton 90-degree hydraulic tilt, replacing multi-operator crane flipping with a single-operator controlled workstation.
-
 - **10,000 kg Rated Capacity**: Handles full-size steel coils, pipes, and fabricated weldments in a single lift without load distribution concerns.
 - **Dual Synchronized Hydraulic Cylinders**: Balanced torque across the full platform width prevents twist that single-cylinder designs experience with off-center loads.
 - **CE + ISO 9001 Certified**: Meets EU machinery directive import requirements with third-party audited factory quality management.
+- **Q345B All-Welded Structural Steel Frame**: 20 percent higher yield strength than standard Q235 steel, maintaining frame geometry under 20,000 rated load cycles.
+- **24V DC Pendant Control with Deadman Switch**: Hold-to-run operation stops the platform instantly at any angle when released for precise workpiece positioning.
+- **Hydraulic Lock Valves on Both Cylinders**: Platform holds position under full load even if hydraulic pressure drops, eliminating uncontrolled drift risk.
 ```
 
 ### Step 7: Application Scenarios
