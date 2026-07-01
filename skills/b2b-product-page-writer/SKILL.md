@@ -82,6 +82,12 @@ Only generate these 7 variable blocks:
 - Analyze the search intent behind `{TargetKeyword}` before writing. What does a real buyer typing this keyword actually want to know?
 - Structure content to answer the questions a procurement engineer would ask in order: "What spec range does this cover?" -> "How does it compare?" -> "Which industries use it?" -> "How do I buy it?"
 
+### Internal Link Placement
+
+- Short Description: embed 1 internal link to a related product or case study.
+- Features block: embed 1 internal link within a feature description, linking to another product or supporting article.
+- Application Scenarios: embed 1 internal link to a related case study or application page.
+- Never cluster all internal links in one block. Distribute them naturally.
 ### Segmented Output Control
 
 - **Output only the section currently requested.** Never generate all 7 blocks in one response.
@@ -204,6 +210,8 @@ Format:
 - **Industry/Use Case**: Concrete description of how this product operates in that environment.
 ```
 
+
+**Translation rule**: When outputting the Chinese version of the Spec Table, keep the Parameter and Unit column headers in English. Only translate the Chinese annotations if needed. The Parameter names and Unit symbols are international standards and must not be translated. Example: "Rated Load Capacity" stays in English in both versions.
 ### Step 8: Technical Specification Table
 
 Generate as a **Markdown table**. Format: Parameter | Value | Unit.
@@ -235,6 +243,12 @@ Purchase questions (3-4):
 Each Q&A: 2-4 sentences. Factual, no marketing fluff.
 
 ### Step 10: Schema Markup + Quality Check
+
+### Link Directory + Schema Markup
+
+**Output order**: Link Directory first (human-readable bilingual table) -> blank line -> Schema Markup (JSON-LD, machine-readable).
+
+### Link Directory
 
 ### Schema Markup
 
