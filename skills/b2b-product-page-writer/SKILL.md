@@ -195,32 +195,33 @@ Structure:
 
 1. **One-line summary** at the top -- what this product solves in plain engineering language. Not a slogan. Not a list. One sentence capturing the core value.
 
-2. **3 unordered bullet points** below the summary. Each bullet covers one dimension. Do not repeat the same dimension twice.
+2. **3 Feature items** below. Format matches Application Scenarios: `- **Label**: Description sentence.`
 
-Bullet structure: `**Short label** -- single-sentence explanation of why it matters.`
+Each Feature = one bold label + one description sentence. 3 items total.
 
 The 3 dimensions to cover (pick the 3 most relevant; do NOT use the same 3 for every product):
 
 | Dimension | What It Covers | Example Labels |
 |---|---|---|
-| **Key Spec** | The number buyers check first | Load capacity, tilt angle, lift height, speed, power |
-| **Differentiator** | What separates this from standard alternatives | Dual-cylinder design, compact footprint, tool-free adjustment, modular frame |
-| **Safety/Compliance** | Certifications, safety mechanisms, standards met | CE certified, ISO 9001, dual-channel E-stop, overload protection |
-| **Build/Components** | Materials, branded parts, structural choices | Q345B structural steel, Siemens motor, SKF bearings, all-welded frame |
-| **Operational Result** | A physical consequence of the design -- no marketing words | Zero-drift holding at any angle, no strap-down between rotations, single-operator control |
+| **Key Spec** | The number buyers check first | Load Capacity, 90-Degree Tilt, 4200mm Lift Height, 80mm/s Speed |
+| **Differentiator** | What separates this from standard alternatives | Dual-cylinder Synchronized Drive, Compact Footprint, Tool-Free Adjustment, Modular Frame |
+| **Safety/Compliance** | Certifications, safety mechanisms, standards met | CE + ISO 9001 Certified, Dual-channel Emergency Stop, Overload Protection at 125 percent |
+| **Build/Components** | Materials, branded parts, structural choices | Q345B Structural Steel Frame, Siemens Motor, SKF Bearings, All-Welded Construction |
+| **Operational Result** | A physical consequence of the design -- no marketing words | Zero-Drift Angle Holding, No Strap-Down Between Rotations, Single-Operator Control |
 
 Rules:
 - Labels must be derived from `{ProductSpecs}` -- never invent Siemens, SKF, or any brand unless the user provided it.
 - If the user did not provide certifications or branded components, use the Safety/Compliance or Build dimensions with structural descriptions instead of brand names.
 - Never write "improves efficiency", "saves time", or any hollow benefit. Every explanation must trace to a physical cause.
+- Format exactly like Application Scenarios: `- **Label**: Description.` (bold label, colon, space, description sentence).
 
 Example format (product: hydraulic upender):
 ```
 10-ton 90-degree hydraulic tilt, replacing multi-operator crane flipping with a single-operator controlled workstation.
 
-- **10,000 kg capacity** -- handles full-size steel coils, pipes, and fabricated weldments in a single lift
-- **Dual synchronized hydraulic cylinders** -- balanced torque prevents platform twist under off-center loads
-- **CE certified, Siemens motor, ISO 9001 factory** -- global safety compliance with globally recognized drive components
+- **10,000 kg Rated Capacity**: Handles full-size steel coils, pipes, and fabricated weldments in a single lift without load distribution concerns.
+- **Dual Synchronized Hydraulic Cylinders**: Balanced torque across the full platform width prevents twist that single-cylinder designs experience with off-center loads.
+- **CE + ISO 9001 Certified**: Meets EU machinery directive import requirements with third-party audited factory quality management.
 ```
 
 ### Step 7: Application Scenarios
