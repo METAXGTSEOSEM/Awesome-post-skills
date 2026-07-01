@@ -274,17 +274,9 @@ Purchase questions (3-4):
 
 Each Q&A: 2-4 sentences. Factual, no marketing fluff.
 
-### Step 10: Schema Markup + Quality Check
+### Step 10: Link Directory + Schema Markup + Quality Check
 
-### Link Directory
-
-Output a bilingual table of all links used in the content:
-
-| Anchor Text (EN) | Anchor Text (zhong wen) | URL | Type |
-|---|---|---|---|
-| [English anchor] | [Chinese anchor] | [URL] | Internal / External | + Schema Markup
-
-**Output order**: Link Directory first (human-readable bilingual table) -> blank line -> Schema Markup (JSON-LD, machine-readable).
+**Output order**: Link Directory first (human-readable bilingual table) -> blank line -> Schema Markup (JSON-LD, machine-readable) -> blank line -> Quality Check Checklist.
 
 ### Link Directory
 
