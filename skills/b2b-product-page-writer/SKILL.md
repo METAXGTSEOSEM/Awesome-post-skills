@@ -1,4 +1,4 @@
-﻿---
+---
 name: b2b-product-page-writer
 description: Generate B2B industrial product page content optimized for Google rankings and RankMath SEO scoring. Covers product title (3 variants), short description, features (feature -> benefit), application scenarios, MD-formatted spec tables, FAQ, schema markup, and full keyword placement (primary/secondary/LSI in title, URL slug, meta description, H1, image file names, image Alt text). Use when user needs to write a B2B product page, create product descriptions for industrial equipment, or optimize an existing product page for SEO/RankMath.
 ---
@@ -57,8 +57,8 @@ Only generate these 7 variable blocks:
 ### Strict Half-Width Punctuation
 
 - **100% English half-width punctuation everywhere** -- including Chinese translations, tables, lists, and parenthetical text.
-- Allowed: `.` `,` `:` `;` `?` `!` `-` `--` `(` `)` `[` `]` `"`
-- Banned: any full-width punctuation characters
+- Allowed only: `,` `.` `:` `;` `?` `!` `-` `--` `(` `)` `[` `]` `"` `"` `'` `'` (English half-width only)
+- Absolutely banned: any Chinese full-width punctuation marks such as `,` `.` `:` `;` `(` `)` `[` `]` `"` `"` `'` `'` `!` `?` and all other full-width characters
 - This rule is absolute. There are no exceptions, even in the Chinese translation sections.
 
 ### No AI Transitional Fluff
