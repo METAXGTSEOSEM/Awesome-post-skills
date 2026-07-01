@@ -1,0 +1,8 @@
+interface:
+  display_name: "B2B Case Study Writer"
+  short_description: "Generate B2B case studies optimized for Google, GEO & RankMath 90+"
+  default_prompt: "Use $b2b-case-study-writer to create a B2B case study page with full SEO metadata, project snapshot, challenge/solution, and schema markup."
+  brand_color: "#0891B2"
+
+policy:
+  allow_implicit_invocation: false

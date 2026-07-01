@@ -178,6 +178,7 @@ The agent will walk you through the 12-step pipeline — collecting prerequisite
 | `wp-seo-auditor` | ✅ Stable | SEO Audit | Scored report, 8-dimension breakdown, priority fix list |
 | `competitor-content-gap-analyzer` | ✅ Stable | Competitive Intel | Gap scorecard, content calendar, coverage map |
 | `b2b-product-page-writer` | ✅ Stable | Product Pages | SEO title, description, features, scenarios, MD spec table, FAQ, schema |
+| `b2b-case-study-writer` | ✅ Stable | Case Studies | SEO metadata, project snapshot, challenge/solution, spec table, image plan, schema |
 | *More coming soon* | 🔜 Planned | — | — |
 
 ---
