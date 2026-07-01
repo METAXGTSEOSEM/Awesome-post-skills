@@ -189,17 +189,39 @@ Also generate:
 3. Primary application or target audience
 4. Implicit CTA or value signal
 
-### Step 6: Features (Feature -> Benefit)
+### Step 6: Features
 
-5-8 items. Each must be a feature -> benefit pair, not a flat spec list.
+Structure:
 
-Format: `**Feature**: Benefit statement explaining why this matters to the buyer.`
+1. **One-line summary** at the top -- what this product solves in plain engineering language. Not a slogan. Not a list. One sentence capturing the core value.
 
-| Feature | -> | Benefit (Why it matters) |
+2. **3 unordered bullet points** below the summary. Each bullet covers one dimension. Do not repeat the same dimension twice.
+
+Bullet structure: `**Short label** -- single-sentence explanation of why it matters.`
+
+The 3 dimensions to cover (pick the 3 most relevant; do NOT use the same 3 for every product):
+
+| Dimension | What It Covers | Example Labels |
 |---|---|---|
-| [Key spec with unit] | -> | [What the buyer can do / not worry about because of this] |
-| [Material or design choice] | -> | [How this extends service life or reduces failure risk] |
-| [Certification or standard] | -> | [What market access or quality assurance this unlocks] |
+| **Key Spec** | The number buyers check first | Load capacity, tilt angle, lift height, speed, power |
+| **Differentiator** | What separates this from standard alternatives | Dual-cylinder design, compact footprint, tool-free adjustment, modular frame |
+| **Safety/Compliance** | Certifications, safety mechanisms, standards met | CE certified, ISO 9001, dual-channel E-stop, overload protection |
+| **Build/Components** | Materials, branded parts, structural choices | Q345B structural steel, Siemens motor, SKF bearings, all-welded frame |
+| **Operational Result** | A physical consequence of the design -- no marketing words | Zero-drift holding at any angle, no strap-down between rotations, single-operator control |
+
+Rules:
+- Labels must be derived from `{ProductSpecs}` -- never invent Siemens, SKF, or any brand unless the user provided it.
+- If the user did not provide certifications or branded components, use the Safety/Compliance or Build dimensions with structural descriptions instead of brand names.
+- Never write "improves efficiency", "saves time", or any hollow benefit. Every explanation must trace to a physical cause.
+
+Example format (product: hydraulic upender):
+```
+10-ton 90-degree hydraulic tilt, replacing multi-operator crane flipping with a single-operator controlled workstation.
+
+- **10,000 kg capacity** -- handles full-size steel coils, pipes, and fabricated weldments in a single lift
+- **Dual synchronized hydraulic cylinders** -- balanced torque prevents platform twist under off-center loads
+- **CE certified, Siemens motor, ISO 9001 factory** -- global safety compliance with globally recognized drive components
+```
 
 ### Step 7: Application Scenarios
 
