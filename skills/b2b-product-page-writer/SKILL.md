@@ -1,26 +1,37 @@
----
+﻿---
 name: b2b-product-page-writer
-description: Generate B2B industrial product page content optimized for Google rankings and RankMath SEO scoring. Covers product title (3 variants), short description, features (feature → benefit), application scenarios, MD-formatted spec tables, FAQ, schema markup, and full keyword placement (primary/secondary/LSI in title, URL slug, meta description, H1, image file names, image Alt text). Use when user needs to write a B2B product page, create product descriptions for industrial equipment, or optimize an existing product page for SEO/RankMath.
+description: Generate B2B industrial product page content optimized for Google rankings and RankMath SEO scoring. Covers product title (3 variants), short description, features (feature -> benefit), application scenarios, MD-formatted spec tables, FAQ, schema markup, and full keyword placement (primary/secondary/LSI in title, URL slug, meta description, H1, image file names, image Alt text). Use when user needs to write a B2B product page, create product descriptions for industrial equipment, or optimize an existing product page for SEO/RankMath.
 ---
 
 # B2B Product Page Writer
 
-Generate B2B industrial product page content optimized for Google ranking and RankMath SEO score. Only generates **variable content blocks** — the user already has fixed template blocks for certifications, CTA, related products, and downloads.
+Generate B2B industrial product page content optimized for Google ranking and RankMath SEO score. Only generates **variable content blocks** -- the user already has fixed template blocks for certifications, CTA, related products, and downloads.
 
-## Prerequisites
+## Step 0: Variable Collection (MANDATORY -- Run Before Anything Else)
 
-Collect from the user:
-- **Product name** and **category**
-- **Product specifications/parameters** (dimensions, capacity, materials, power, etc.)
-- **Core application scenarios** (3-5 industries or use cases)
-- **Key selling points** (what makes this product different)
-- **Existing certifications** (ISO, CE, ANSI, etc.)
-- **Competitor product page URLs** (3-5)
-- **Website domain** (for URL slug suggestions)
+Before writing a single word, you MUST collect these variables from the user. If the user does not provide any item, use `[placeholder]` and ask the user to fill it later. Never hardcode any brand name, URL, or keyword into the skill -- every value comes from this step.
+
+| Variable | Required? | Description | If Not Provided |
+|---|---|---|---|
+| `{Brand}` | Yes | Company/brand name | Ask again. Cannot proceed without it. |
+| `{BrandFull}` | No | Full legal company name | Default to `{Brand}` |
+| `{SiteURL}` | Yes | Full site URL (e.g., `https://example.com`) | Ask again. Needed for breadcrumbs, internal links, schema. |
+| `{ProductName}` | Yes | Exact product name and model | Ask the user. |
+| `{ProductCategory}` | Yes | Product category for breadcrumbs and schema | Ask the user. |
+| `{TargetKeyword}` | Yes | Primary keyword for this product page | Ask the user to provide or approve your suggestion. |
+| `{SecondaryKeywords}` | No | 5-8 secondary long-tail keywords | Generate from user input + Google top results analysis. |
+| `{LSIKeywords}` | No | 5-10 LSI/semantic related terms | Generate from Google related searches and industry terminology. |
+| `{CompetitorURLs}` | No | Up to 5 competitor product page URLs | Skip. Mention to user that competitive insight was not available. |
+| `{ProductSpecs}` | Yes | All known product parameters: dimensions, capacity, materials, power, certifications | Use `[placeholder]` for anything not yet known. Never invent. |
+| `{AppScenarios}` | No | 3-5 core application industries or use cases | Generate from product type if not provided. |
+
+**After collection**: Display all variables in a summary table and ask user to confirm before proceeding to Step 1.
+
+---
 
 ## Blocks Generated (What You Output)
 
-The fixed template blocks (certifications, CTA, related products, downloads) are already handled — do NOT generate them.
+The fixed template blocks (certifications, CTA, related products, downloads) are already handled -- do NOT generate them.
 
 Only generate these 7 variable blocks:
 
@@ -28,7 +39,7 @@ Only generate these 7 variable blocks:
 |---|---|---|
 | 1 | Title | 3 SEO variants |
 | 2 | Short Description | 120-160 characters |
-| 3 | Features | 5-8 feature → benefit pairs |
+| 3 | Features | 5-8 feature -> benefit pairs |
 | 4 | Application Scenarios | 3-5 scenarios with 1-sentence description each |
 | 5 | Spec Table | MD table |
 | 6 | FAQ | 6-8 Q&A (50% product + 50% purchase) |
@@ -36,24 +47,69 @@ Only generate these 7 variable blocks:
 
 ---
 
+## Output Format & Rules
 
-## Output Language Rule
+### Block-Level Bilingual Output
 
-- **All interactions with the user**: Use Chinese for questions, explanations, and confirmations.
-- **All generated content (deliverables)**: Produce English first, then immediately follow with the Chinese translation. One block at a time: English block → Chinese block → next English block → next Chinese block.
-- **Image file names and Alt text**: English only (SEO convention).
-- **Schema markup**: English only (Google requirement).
+- **English block first**, then Chinese translation immediately below. Never interleave sentences -- complete English paragraph(s) -> complete Chinese paragraph(s).
+- Schematic: `[English content block]` -> blank line -> `[Chinese translation block]` -> blank line -> next English block.
 
-## Step 1: Product Info Collection
+### Strict Half-Width Punctuation
 
-If any of these are missing, ask the user:
-- Complete spec parameters (value + unit for each)
-- Certification list (standard names + numbers)
-- Competitor product page URLs
+- **100% English half-width punctuation everywhere** -- including Chinese translations, tables, lists, and parenthetical text.
+- Allowed: `.` `,` `:` `;` `?` `!` `-` `--` `(` `)` `[` `]` `"`
+- Banned: any full-width punctuation characters
+- This rule is absolute. There are no exceptions, even in the Chinese translation sections.
+
+### No AI Transitional Fluff
+
+- Banned words and patterns: "furthermore", "moreover", "in addition", "additionally", "besides", "in conclusion", "to summarize", "in summary", "overall", "all in all"
+- Replace with: direct cause-and-effect engineering logic. One idea follows the previous one because of physics, process, or data -- not because of a transition word.
+
+### No Marketing Hype or AI-Speak
+
+- Banned patterns: "cost-effective", "high ROI", "time-saving", "best-in-class", "industry-leading", "unparalleled", "revolutionary", "game-changing", exaggerated claims without physical evidence.
+- Replace with: specific physical benefits. Instead of "improved safety", write concrete measurable outcomes.
+
+### International Site Perspective
+
+- Write for an international B2B audience. Do not use Chinese punctuation, Chinese formatting conventions, or region-specific references.
+- All punctuation must be English half-width, even in Chinese blocks.
+- Industry terminology uses international standard units and nomenclature.
+
+### Search Intent Awareness
+
+- Analyze the search intent behind `{TargetKeyword}` before writing. What does a real buyer typing this keyword actually want to know?
+- Structure content to answer the questions a procurement engineer would ask in order: "What spec range does this cover?" -> "How does it compare?" -> "Which industries use it?" -> "How do I buy it?"
+
+### Segmented Output Control
+
+- **Output only the section currently requested.** Never generate all 7 blocks in one response.
+- After each section, pause and wait for the user''s next instruction.
+- This prevents model attention decay and character truncation.
+
+### Live Link Verification
+
+- **External links**: You must search live / fetch the official standards body website (e.g., asme.org, iso.org, bsigroup.com) to find the actual canonical URL. Never fabricate a link, a virtual page, or a 404-prone URL. Return only the real, active, permanent canonical URL.
+- **Internal links**: Construct from `{SiteURL}`. Ask the user for their site structure (product pages, case studies, blog posts) to generate correct internal links with proper anchor text. Link to related products, relevant case studies, or supporting articles from within the full site -- not just this product page. If `{SiteURL}` was not provided, skip internal links -- never guess.
+
+### Link Directory (End of Article)
+
+At the very end of the complete product page, output a bilingual link directory table summarizing every internal and external link used:
+
+| Anchor Text (EN) | Anchor Text (zhong wen) | URL | Type |
+|---|---|---|---|
+| [English anchor] | [Chinese anchor] | [URL] | Internal / External |
 
 ---
 
-## Step 2: Competitor Product Page Analysis
+## Step-by-Step SOP
+
+### Step 1: Confirm Variables
+
+Display all Step 0 variables in a summary table. Ask user to confirm or revise. Do not proceed until confirmed.
+
+### Step 2: Competitor Product Page Analysis
 
 Analyze 3-5 competitor product pages for the same/similar product:
 - Extract their Title tag format, H1, and URL structure
@@ -63,34 +119,29 @@ Analyze 3-5 competitor product pages for the same/similar product:
 
 Output: brief comparison table showing what competitors do well and where they fall short.
 
----
+Lock the brand position: This is `{Brand}`''s product page. Never mimic competitor tone or structure. Compete on engineering depth, not on claims.
 
-## Step 3: Keyword Research & Placement Plan
+### Step 3: Keyword Research & Placement Plan
 
-### Primary Keyword (1)
+#### Primary Keyword (1)
 
-The main product keyword buyers search for. Derived from product name + key attribute:
-- Pattern: `[Product Type]` or `[Attribute] [Product Type]` or `[Product Type] for [Application]`
-- Example: "Heavy-duty scissor lift" / "Hydraulic dock leveler" / "Vertical reciprocating conveyor for warehouses"
+The main product keyword buyers search for. Derived from `{TargetKeyword}`.
 
-### Secondary Keywords (5-8)
+#### Secondary Keywords (5-8)
 
-Long-tail variations buyers use at different purchase stages:
-- Pattern: `[Primary] + [spec]` / `[Primary] + [application]` / `[Primary] + [certification]`
-- Examples: "heavy-duty scissor lift 5000kg" / "hydraulic dock leveler CE certified" / "industrial lift table for automotive"
+Long-tail variations from `{SecondaryKeywords}`.
 
-### LSI / Semantic Keywords (5-10)
+#### LSI / Semantic Keywords (5-10)
 
-Related terms Google expects to see in context:
-- Material terms, standard names, industry terms, synonym variations
+Related terms from `{LSIKeywords}`.
 
-### RankMath Keyword Placement Map
+#### RankMath Keyword Placement Map
 
 | Placement Target | Keyword | Notes |
 |---|---|---|
-| **URL slug** | Primary keyword (hyphen-case) | Keep ≤ 75 characters, include core product term |
-| **SEO Title / Meta Title** | Primary keyword at front | ≤ 60 characters total; format: `[Primary] — [Brand] [Secondary]` |
-| **Meta Description** | Primary + 1 secondary | ≤ 160 characters; include value proposition + CTA hint |
+| **URL slug** | Primary keyword (hyphen-case) | Keep <=75 characters, include core product term |
+| **SEO Title / Meta Title** | Primary keyword at front | <=60 characters total; format: `[Primary] -- {Brand} [Secondary]` |
+| **Meta Description** | Primary + 1 secondary | <=160 characters; include value proposition + CTA hint |
 | **H1** | Primary keyword | Exact or close match to SEO title |
 | **First paragraph** | Primary keyword within first 25 words | Google counts this heaviest |
 | **At least one H2** | Primary or top secondary keyword | Reinforces topic relevance |
@@ -98,39 +149,33 @@ Related terms Google expects to see in context:
 | **Image file names** | Primary keyword as prefix | Format: `keyword-descriptor.jpg` |
 | **Image Alt text** | Primary or secondary keyword | Descriptive with product context, no stuffing |
 
-### RankMath Scoring Strategy
+#### RankMath Scoring Strategy
 
-To maximize RankMath SEO score, ensure:
-- Primary keyword in: SEO Title (at start), Meta Description, URL, H1, first 100 words, one H2, one image Alt
-- Readability: Flesch Reading Ease ≥ 60, active voice, short sentences
-- Content length: ≥ 900 words for product pages (RankMath minimum; B2B target ≥ 1500)
-- Keyword density: primary 0.5-2.0%, no stuffing
-- Internal links: ≥ 3 with descriptive anchors
-- External links: ≥ 2 to authoritative sources
-- No consecutive sentences starting with the same word
-- Transition words used in ≥ 30% of sentences
-- Image Alt on every image, image file names SEO-friendly
+To maximize RankMath SEO score:
+- Primary keyword in URL slug, SEO title, H1, first paragraph, meta description, and at least one image Alt
+- SEO title <=60 characters, meta description <=160 characters
+- >=3 internal links and >=2 external links per page
+- Transition words in >=30% of sentences (use cause-and-effect, not fluff)
+- Content >=900 words
+- Flesch Reading Ease >=60
 
----
+### Step 4: Product Title
 
-## Step 4: Title Generation
+Generate 3 title variants:
 
-Generate 3 title variants for A/B testing:
+| Style | Formula | Example |
+|---|---|---|
+| **Product-Driven** | `[Product Name] -- [Category] for [Application]` | Heavy-Duty Hydraulic Scissor Lift -- Industrial Lift Table for Warehouse Mezzanine Access |
+| **Spec-Driven** | `[Key Spec] [Product Name] | [Industry Short]` | 5000kg Heavy-Duty Hydraulic Scissor Lift | Industrial |
+| **Benefit-Driven** | `[Product Name]: [Key Benefit]` | Heavy-Duty Hydraulic Scissor Lift: Double-Pantograph Design, 10-Year Frame Life |
 
-| Type | Pattern | Example | Best For |
-|---|---|---|---|
-| **SEO-First** | `[Primary Keyword] — [Brand]` | Heavy Duty Scissor Lift — Gradin | Search visibility, exact match CTR |
-| **Scenario-Driven** | `[Primary] for [Application/Industry] — [Brand]` | Industrial Scissor Lift for Warehouse Logistics — Gradin | Capturing scenario intent, higher commercial intent |
-| **Spec-Driven** | `[Key Spec] [Product Type] — [Brand]` | 5000kg Heavy Duty Hydraulic Scissor Lift — Gradin | Long-tail spec searches, qualified traffic |
+Also generate:
+- **URL slug** (hyphen-case, from `{SiteURL}` + `/products/` + slug)
+- **SEO Title** (<=60 characters)
+- **Meta Description** (<=160 characters, benefit-driven)
+- **H1** (close match to SEO Title)
 
-Also generate the corresponding:
-- **URL slug** (hyphen-case, ≤ 75 chars, primary keyword included)
-- **Meta Description** (≤ 160 chars, primary keyword + value proposition)
-- **H1** (close match to chosen SEO Title)
-
----
-
-## Step 5: Short Description
+### Step 5: Short Description
 
 120-160 characters. Include:
 1. What the product is (category)
@@ -138,101 +183,73 @@ Also generate the corresponding:
 3. Primary application or target audience
 4. Implicit CTA or value signal
 
-Example:
-```
-Heavy-duty hydraulic scissor lift with 5000kg capacity and double-pantograph design for warehouse mezzanine access. CE certified, built with Q345B steel for 10-year service life.
-```
+### Step 6: Features (Feature -> Benefit)
 
----
-
-## Step 6: Features (Feature → Benefit)
-
-5-8 items. Each must be a feature → benefit pair, not a flat spec list.
+5-8 items. Each must be a feature -> benefit pair, not a flat spec list.
 
 Format: `**Feature**: Benefit statement explaining why this matters to the buyer.`
 
-| Feature | → | Benefit (Why it matters) |
+| Feature | -> | Benefit (Why it matters) |
 |---|---|---|
-| 5000kg load capacity | → | Handles palletized goods, machinery parts, and steel stillages without capacity anxiety |
-| Double pantograph design | → | Reaches 4.2m mezzanine height from a low collapsed profile, fitting standard warehouse floor plans |
-| Q345B structural steel frame | → | 20% higher yield strength than standard steel — extends frame life under daily cyclic loading |
-| CE certified + ISO 9001 factory | → | Meets EU import requirements and ensures consistent manufacturing quality |
-| 125% overload static tested | → | Every unit proof-tested before shipment — no surprises at installation |
+| [Key spec with unit] | -> | [What the buyer can do / not worry about because of this] |
+| [Material or design choice] | -> | [How this extends service life or reduces failure risk] |
+| [Certification or standard] | -> | [What market access or quality assurance this unlocks] |
 
----
-
-## Step 7: Application Scenarios
+### Step 7: Application Scenarios
 
 3-5 scenarios. Each: **Industry/Use Case** + 1-sentence description of how the product fits.
 
 Format:
 ```
-- **Automotive Parts Warehousing**: Heavy pallet loads with frequent lift cycles — the double-pantograph design handles 30+ cycles/day without hydraulic overheating.
-- **Steel Coil Handling**: Compact platform with reinforced decking lifts coils up to 5000kg for production line feeding.
+- **Industry/Use Case**: Concrete description of how this product operates in that environment.
 ```
 
----
-
-## Step 8: Technical Specification Table
+### Step 8: Technical Specification Table
 
 Generate as a **Markdown table**. Format: Parameter | Value | Unit.
 
 Rules:
-- Sort rows logically: capacity/dimensions first → performance → materials → electrical → certifications
+- Sort rows logically: capacity/dimensions first -> performance -> materials -> electrical -> certifications
 - Use consistent units throughout (metric preferred for B2B)
 - Include safety and certification rows at the bottom
 
 | Parameter | Value | Unit |
 |---|---|---|
-| Rated Load Capacity | 5000 | kg |
-| Max Lift Height | 4200 | mm |
-| Collapsed Height | 650 | mm |
-| Platform Size (L×W) | 2500 × 3500 | mm |
-| Lifting Speed | 80 | mm/s |
-| Motor Power | 5.5 | kW |
-| Power Supply | 380V / 50Hz / 3-Phase | — |
-| Hydraulic Oil Capacity | 40 | L |
-| Safety Standard | CE / ISO 9001 | — |
-| Structural Steel Grade | Q345B | — |
+| [Spec 1] | [Value] | [Unit] |
+| [Spec 2] | [Value] | [Unit] |
+| ... | ... | ... |
 
----
-
-## Step 9: FAQ
+### Step 9: FAQ
 
 6-8 questions. 50% product questions, 50% purchase/delivery questions.
 
 Product questions (3-4):
-- What is the maximum load this product can handle continuously?
-- What safety features come standard?
-- Does this require a pit for installation?
-- What maintenance schedule is recommended?
+- Technical capability questions specific to this product type
+- Safety and compliance questions
+- Installation and maintenance questions
 
 Purchase questions (3-4):
-- What is the MOQ for this product?
-- What is the typical lead time from order to delivery?
-- Do you offer OEM/ODM customization?
-- What certifications are included with the product?
+- MOQ, lead time, customization capability
+- Shipping, warranty, after-sales support
 
 Each Q&A: 2-4 sentences. Factual, no marketing fluff.
 
----
-
-## Step 10: Schema Markup + Quality Check
+### Step 10: Schema Markup + Quality Check
 
 ### Schema Markup
 
-Generate these JSON-LD blocks:
+Generate JSON-LD blocks using `{Brand}`, `{BrandFull}`, `{SiteURL}`, `{ProductName}`, `{ProductCategory}` variables:
 
 **Product Schema**:
 ```json
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "[Product Name]",
+  "name": "{ProductName}",
   "description": "[Short Description]",
   "sku": "[SKU]",
-  "brand": { "@type": "Brand", "name": "[Brand Name]" },
-  "category": "[Category]",
+  "brand": { "@type": "Brand", "name": "{BrandFull}" },
+  "category": "{ProductCategory}",
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
@@ -242,15 +259,16 @@ Generate these JSON-LD blocks:
 ```
 
 **FAQ Schema** (from Step 9).
+
 **BreadcrumbList Schema**:
 ```json
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://[domain]/" },
-    { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://[domain]/products/" },
-    { "@type": "ListItem", "position": 3, "name": "[Product Name]", "item": "https://[domain]/products/[slug]/" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{SiteURL}/" },
+    { "@type": "ListItem", "position": 2, "name": "Products", "item": "{SiteURL}/products/" },
+    { "@type": "ListItem", "position": 3, "name": "{ProductName}", "item": "{SiteURL}/products/[slug]/" }
   ]
 }
 ```
@@ -258,18 +276,23 @@ Generate these JSON-LD blocks:
 ### Quality Check Checklist
 
 - [ ] All keywords placed per RankMath map (Step 3)
-- [ ] URL slug ≤ 75 characters, hyphen-case, primary keyword present
-- [ ] Meta Title ≤ 60 characters, primary keyword at front
-- [ ] Meta Description ≤ 160 characters
+- [ ] URL slug <=75 characters, hyphen-case, primary keyword present
+- [ ] Meta Title <=60 characters, primary keyword at front
+- [ ] Meta Description <=160 characters
 - [ ] H1 contains primary keyword
 - [ ] Primary keyword in first 100 words of description
 - [ ] Image file names follow `keyword-descriptor.jpg` format
 - [ ] Image Alt text on every image with keyword context
 - [ ] Spec table is MD-formatted with consistent units
 - [ ] FAQ has 6-8 Q&As, balanced product/purchase split
-- [ ] No AI cliché openings or fluff phrases
-- [ ] Flesch Reading Ease ≥ 60
-- [ ] Content ≥ 900 words (RankMath minimum)
-- [ ] ≥ 3 internal links with descriptive anchors
-- [ ] ≥ 2 external links to authoritative sources
-- [ ] Transition words in ≥ 30% of sentences
+- [ ] No AI cliche openings or exaggerated claims
+- [ ] No marketing hype words (cost-effective, high ROI, best-in-class, etc.)
+- [ ] No fabricated numbers -- `[placeholder]` used where data is unavailable
+- [ ] All external links verified as active (no 404)
+- [ ] Flesch Reading Ease >=60
+- [ ] Content >=900 words (RankMath minimum)
+- [ ] >=3 internal links with descriptive anchors to related products, case studies, or blog posts
+- [ ] >=2 external links to authoritative sources
+- [ ] English punctuation only throughout
+- [ ] English -> Chinese block delivery respected
+- [ ] All `{Variable}` placeholders resolved before final output
