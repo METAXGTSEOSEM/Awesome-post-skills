@@ -24,6 +24,60 @@ Only generate these blocks. Fixed template blocks — general FAQ (7 questions),
 
 ---
 
+## Output Format & Rules
+
+### Block-Level Bilingual Output
+
+- **English block first**, then Chinese translation immediately below. Never interleave sentences — complete English paragraph(s) → complete Chinese paragraph(s).
+- Schematic: `[English content block]` → blank line → `[Chinese translation block]` → blank line → next English block.
+
+### Strict Half-Width Punctuation
+
+- **100% English half-width punctuation everywhere** — including Chinese translations, tables, lists, and parenthetical text.
+- ✅ Allowed: `.` `,` `:` `;` `?` `!` `-` `—` `(` `)` `[` `]` `"` `"`
+- ❌ Banned: `,` `.` `:` `;` `"` `"` `'` `'` `(` `)` `[` `]`
+- This rule is absolute. There are no exceptions, even in the Chinese translation sections.
+
+### No AI Transitional Fluff
+
+- ❌ Banned words and patterns: "furthermore", "moreover", "in addition", "additionally", "besides", "in conclusion", "to summarize", "in summary", "overall", "all in all"
+- ✅ Replace with: direct cause-and-effect engineering logic. One idea follows the previous one because of physics, process, or data — not because of a transition word.
+
+### Case Study Standard Structure
+
+Content must follow this fixed section order:
+
+| Section # | Section Name | Description |
+|---|---|---|
+| 1 | SEO Block | Keywords, Title, URL, Meta Description, Image Alt plan |
+| 2 | Case Title | H1 headline |
+| 3 | Project Overview | Project snapshot table + 1-paragraph summary |
+| 4 | Challenge | Physical space & technical constraints (3-4 specific pain points) |
+| 5 | Solution | Custom design solution (2-3 paragraphs, engineering detail) |
+| 6 | Technical Specifications | Full MD table with parameters, values, units |
+| 7 | Project Gallery | Image placeholder guide — describe what real engineering photos should be inserted (user uploads later) |
+
+### Segmented Output Control
+
+- **Output only the section currently requested.** Never generate the entire case study in one response.
+- After each section, pause and wait for the user's next instruction (e.g., "Section 2" or "Next: Challenge").
+- This prevents model attention decay and character truncation.
+
+### Link Directory (End of Article)
+
+At the very end of the complete case study, output a bilingual link directory table summarizing every internal and external link used:
+
+| Anchor Text (EN) | Anchor Text (中文) | URL | Type |
+|---|---|---|---|
+| [English anchor] | [Chinese anchor] | [URL] | Internal / External |
+
+### Live Link Verification
+
+- **External links**: You must search live / fetch the official standards body website (e.g., asme.org, iso.org, bsigroup.com) to find the actual canonical URL. Never fabricate a link, a virtual page, or a 404-prone URL. Return only the real, active, permanent canonical URL.
+- **Format**: `[Natural English anchor text] = Real official URL`
+- **Internal links**: Ask the user for their website URL structure and competitor URLs. If the user provides them, inspect the pages to generate correct internal links with proper anchor text. If not provided, skip internal links — never guess.
+
+---
 ## Core Writing Principles
 
 ### 1. Target Audience
