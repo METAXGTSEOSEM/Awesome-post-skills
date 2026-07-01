@@ -39,7 +39,7 @@ Only generate these 7 variable blocks:
 |---|---|---|
 | 1 | Title | 3 SEO variants |
 | 2 | Short Description | 120-160 characters |
-| 3 | Features | 5-8 feature -> benefit pairs |
+| 3 | Features | 6-10 items: label + description. Same format as Scenarios. |
 | 4 | Application Scenarios | 3-5 scenarios with 1-sentence description each |
 | 5 | Spec Table | MD table |
 | 6 | FAQ | 6-8 Q&A (50% product + 50% purchase) |
@@ -90,16 +90,22 @@ Only generate these 7 variable blocks:
 - Never cluster all internal links in one block. Distribute them naturally.
 ### Segmented Output Control
 
-- **Output only the section currently requested.** Never generate all 7 blocks in one response.
-- After each section, pause and wait for the user''s next instruction.
-- This prevents model attention decay and character truncation.
+- Output one block at a time. After each block (English + Chinese), stop and wait for the user to say 'continue' or 'next' before outputting the next block.
+- Output order: Title & Short Description first -> Features -> Scenarios -> Spec Table -> FAQ -> Link Directory -> Schema Markup.
+- Never bundle multiple blocks in one response. This prevents model attention decay and character truncation.
 
 ### Live Link Verification
 
 - **External links**: You must search live / fetch the official standards body website (e.g., asme.org, iso.org, bsigroup.com) to find the actual canonical URL. Never fabricate a link, a virtual page, or a 404-prone URL. Return only the real, active, permanent canonical URL.
 - **Internal links**: Once the user provides `{SiteURL}`, you must crawl the site to discover its structure -- product category pages, individual product pages, case study pages, blog/news pages. Based on what you find, generate complete `<a href="...">anchor text</a>` internal links directly in the content. The user copies and pastes the output without manually adding links. Internal links must be spread across Short Description (1 link), Features (1 link), and Application Scenarios (1 link). Match anchor text to the actual page content found during crawling -- link to a relevant case study when the scenario describes a real application, link to a related product category when cross-referencing complementary equipment, link to a blog article when referencing technical standards or installation guides. If the site cannot be crawled (e.g., Cloudflare protection), output links in `[anchor text]({SiteURL}/suggested-slug)` format with a note for the user to verify. Never guess a URL without crawling confirmation or user approval.
 
-### Link Directory (End of Article)
+### Link Directory
+
+Output a bilingual table of all links used in the content:
+
+| Anchor Text (EN) | Anchor Text (zhong wen) | URL | Type |
+|---|---|---|---|
+| [English anchor] | [Chinese anchor] | [URL] | Internal / External | (End of Article)
 
 At the very end of the complete product page, output a bilingual link directory table summarizing every internal and external link used:
 
@@ -211,14 +217,19 @@ Rules:
 - Never write "improves efficiency", "saves time", or any hollow benefit. Every explanation must trace to a physical cause.
 - Spread items across at least 4 different dimensions. Do not write 6 variations of "load capacity".
 
-Example format (product: hydraulic upender):
+Example format (product: hydraulic upender -- parameter + benefit fused):
 ```
-- **10,000 kg Rated Capacity**: Handles full-size steel coils, pipes, and fabricated weldments in a single lift without load distribution concerns.
-- **Dual Synchronized Hydraulic Cylinders**: Balanced torque across the full platform width prevents twist that single-cylinder designs experience with off-center loads.
-- **CE + ISO 9001 Certified**: Meets EU machinery directive import requirements with third-party audited factory quality management.
-- **Q345B All-Welded Structural Steel Frame**: 20 percent higher yield strength than standard Q235 steel, maintaining frame geometry under 20,000 rated load cycles.
-- **24V DC Pendant Control with Deadman Switch**: Hold-to-run operation stops the platform instantly at any angle when released for precise workpiece positioning.
-- **Hydraulic Lock Valves on Both Cylinders**: Platform holds position under full load even if hydraulic pressure drops, eliminating uncontrolled drift risk.
+- **Dual-Cylinder Drive Handles 10-Ton Off-Center Loads Without Twist**: Synchronized hydraulic cylinders apply balanced torque across the full platform width. Unlike single-cylinder designs that tilt unevenly when steel coils sit off-center, the workpiece stays level through the entire 90-degree rotation.
+
+- **Platform Holds Position at Any Angle Without Creep**: Hydraulic lock valves on both cylinders trap oil in the circuit when the pendant is released or power is cut. The platform does not drift, sag, or free-fall under full rated load.
+
+- **Single Operator, No Crane Crew**: The 24V DC pendant with deadman switch gives one technician angle control from horizontal loading to vertical discharge. Releasing the switch stops the platform instantly. Two workers previously assigned to crane rigging are available for welding or QA.
+
+- **Q345B Frame Outlasts Standard Structural Steel**: All-welded frame with 20 percent higher yield strength than Q235 grade maintains platform flatness across the design life of 20,000 rated cycles. No cumulative micro-deformation that throws off bolt-pattern alignment.
+
+- **Anti-Slip Deck Secures Round and Irregular Surfaces**: Recessed bolt grid and textured steel decking hold cylindrical pipe sections and asymmetrical weldments without ratchet straps. Custom fixturing bolts into the grid for repeat production runs.
+
+- **CE + ISO 9001, Factory Load-Tested at 125 Percent**: Every unit runs a static overload proof test at 12,500 kg and a full-cycle functional test before crating. The test certificate ships with the machine.
 ```
 
 ### Step 7: Application Scenarios
@@ -231,8 +242,9 @@ Format:
 ```
 
 
-**Translation rule**: When outputting the Chinese version of the Spec Table, keep the Parameter and Unit column headers in English. Only translate the Chinese annotations if needed. The Parameter names and Unit symbols are international standards and must not be translated. Example: "Rated Load Capacity" stays in English in both versions.
 ### Step 8: Technical Specification Table
+
+**Translation rule**: When outputting the Chinese version of the Spec Table, keep the Parameter and Unit column headers in English. The Parameter names and Unit symbols are international standards and must not be translated. Example: "Rated Load Capacity" stays in English in both versions.
 
 Generate as a **Markdown table**. Format: Parameter | Value | Unit.
 
@@ -264,11 +276,23 @@ Each Q&A: 2-4 sentences. Factual, no marketing fluff.
 
 ### Step 10: Schema Markup + Quality Check
 
-### Link Directory + Schema Markup
+### Link Directory
+
+Output a bilingual table of all links used in the content:
+
+| Anchor Text (EN) | Anchor Text (zhong wen) | URL | Type |
+|---|---|---|---|
+| [English anchor] | [Chinese anchor] | [URL] | Internal / External | + Schema Markup
 
 **Output order**: Link Directory first (human-readable bilingual table) -> blank line -> Schema Markup (JSON-LD, machine-readable).
 
 ### Link Directory
+
+Output a bilingual table of all links used in the content:
+
+| Anchor Text (EN) | Anchor Text (zhong wen) | URL | Type |
+|---|---|---|---|
+| [English anchor] | [Chinese anchor] | [URL] | Internal / External |
 
 ### Schema Markup
 
